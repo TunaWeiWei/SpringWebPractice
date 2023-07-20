@@ -5,10 +5,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+ 	 <!-- jQuery v1.9.1 -->
+  	 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  	 <!-- toastr v2.1.4 -->
+ 	 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet"/>
+ 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
 <meta charset="UTF-8">
 <title>會員創立</title>
 </head>
-<body>
+<body onload="memberStatus()">
 	<div id="bc">
 	<h1>會員申請</h1>	
     	<div class="inf">
@@ -81,5 +86,21 @@
 		</div>		
 	</div>
 
+<!-- 彈出會員登入成功or會員修改成功 -->  
+  	<script>
+		if (UserNameCheck = "${username}") {
+			document.getElementById("member").innerText = "歡迎回來:"+"${username}" ;
+		}else {
+			document.getElementById("member").innerText = "登入/註冊" ;
+		}
+	</script>
+	<script>
+	function memberStatus() {		
+		if ("${alert}"=="detectSameAccount") {			
+			toastr.options.timeOut = 3000; 
+	        toastr.info('此帳號已經存在,請再嘗試其他名稱');					
+		}
+	}	
+	</script>
 </body>
 </html>

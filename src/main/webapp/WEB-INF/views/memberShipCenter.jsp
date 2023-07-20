@@ -13,11 +13,47 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
+<head>	
+ 	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 <title>會員頁面</title>
+
+  <!-- jQuery v1.9.1 -->
+   	 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+ 	 <!-- toastr v2.1.4 -->
+ 	 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet"  />
+ 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script> 
+ 	 
+ <style>    	
+        fieldset {
+            left: 30%;
+            width: 40%;
+            min-height: fit-content;
+            min-width: 200px;
+        }
+        
+        table {
+            border-spacing: 0px 10px;
+            width: 100%;
+        }        
+
+        th {
+            color: blue;
+            text-align: left;
+            padding: 20px;
+        }
+
+        td {
+            color: red;
+            text-align: right;
+            font-size: larger;
+            padding: 20px;
+        }        
+    </style>
 </head>
-<body>
+<body onload="memberStatus()">   <!-- 2023/7/21發現問題無法載入toastr ==>忘了添加onload="memberStatus()",此處為在載入網頁時即進行動作的功能 -->
  		<form class="show">
 				<div class="ed">
 					<button id="Edit"><a class="btn" href="<c:url value='/memberEdit'/>" >會員資料修改</a></button>
@@ -85,5 +121,20 @@
 		    </form>
 		</div>		
 	</div>
+	
+<!-- 彈出會員登入成功or會員修改成功 -->  
+ 	
+	<script>
+	function memberStatus() {		
+		if ("${alert}"=="loginSuccess") {			
+			toastr.options.timeOut = 3000; 
+	        toastr.info('會員登入成功');
+					
+		}else if ("${alert}"=="editSuccess"){
+			toastr.options.timeOut = 3000; 
+	        toastr.info('會員修改成功');			
+		}
+	}	
+	</script>	
 </body>
 </html>

@@ -16,7 +16,7 @@
 <meta charset="UTF-8">
 <title>會員資料修改</title>
 </head>
-<body>
+<body >
 <div id="bc">
 	<h1>會員資料修改</h1>	
     	<div class="inf">
