@@ -37,6 +37,22 @@ public class controller {
 		return"memberCreate";
 	}
 	
+	@GetMapping("/memberShipCenter")
+	public String memberShipCenter() {
+		return"memberShipCenter";
+	}
+	
+	@GetMapping("/cancelEdit")
+	public ModelAndView cancelEdit(HttpSession session) {
+		session.setAttribute("alert", null);
+		return new ModelAndView("redirect:/memberShipCenter");
+	}
+	
+	@GetMapping("/memberEdit")
+	public String memberEdit() {			
+		return"memberEdit";			
+	}			
+	
 	@PostMapping(value = "loginCheck",params = {"account","passWord"})
 	public ModelAndView loginCheck(Model model,HttpSession session,			
 			@RequestParam(value="account") String account,			
@@ -85,7 +101,7 @@ public class controller {
 			e.printStackTrace();
 		}
 			
-		return new ModelAndView("memberShipCenter");		//  2023/7/20不知道為啥無法將URL改址
+		return new ModelAndView("redirect:/memberShipCenter");		//  2023/7/20不知道為啥無法將URL改址
 		
 		    }
 	
@@ -157,6 +173,54 @@ public class controller {
 			return new ModelAndView("redirect:/login");			
 		
 		    }
+	
+	@PostMapping(value = "memberUpdate",params = {"username","passWord","age","tel","cellphone","email","account"})
+	public ModelAndView memberUpdate(Model model,HttpSession session,				
+			@RequestParam(value="username") String username,
+			@RequestParam(value="passWord") String password,
+			@RequestParam(value="age") int age,
+			@RequestParam(value="tel") int tel,
+			@RequestParam(value="cellphone") int cellphone,
+			@RequestParam(value="email") String email,
+			@RequestParam(value="account") String account){	
+			
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String databaseUser = "root";
+			String databasePassword = "root";
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/item", databaseUser, databasePassword);
+			String SQL_Update = "UPDATE projectmembership SET username=?, password=?, age=?, tel=?, cellphone=?, email=? WHERE account=?";
+		try (PreparedStatement st =  conn.prepareStatement(SQL_Update)){
+			st.setString(1, username);
+			st.setString(2, password);
+			st.setInt(3, age);
+			st.setInt(4, tel);
+			st.setInt(5, cellphone);
+			st.setString(6, email);
+			st.setString(7, account);
+			
+			st.executeUpdate();	
+			
+			conn.close();
+			st.close();				
+		}
+		
+		} catch (Exception e) {			
+			e.printStackTrace();
+		}
+			//此項為傳回memberShipCenter時更新資料用的暫存資訊
+			session.setAttribute("username",username);					
+			session.setAttribute("age",age);
+			session.setAttribute("tel",tel);
+			session.setAttribute("cellphone",cellphone);
+			session.setAttribute("email",email);
+		
+			//此項為傳回memberShipCenter時用來彈出提醒視窗的判斷值
+			session.setAttribute("alert", "editSuccess");
+		
+		return new ModelAndView("redirect:/memberShipCenter");
+		    }
+	
 	@GetMapping("/logout")
 	public ModelAndView logout(Model model,HttpSession session) {
 		session.invalidate();		
