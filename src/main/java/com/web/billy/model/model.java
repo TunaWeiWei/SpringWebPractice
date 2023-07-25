@@ -1,14 +1,16 @@
 package com.web.billy.model;
 
 public class model {
-	private int id, age, tel, cellphone ;
-	private String account, username,email,password;
+	private int id, age, tel, cellphone, customer ;
+	private String account, username,email,password, eatingTime;
 	
-	public model(int id, String account, String username, String password, int age, int tel, int cellphone, String email) {
+	public model(int id, String account, String username, String password, int age, int tel, int cellphone, String email, int customer, String eatingTime) {
 		this.id = id; this.account = account;
 		this.username = username; this.password = password;
 		this.age = age; this.tel = tel; this.cellphone = cellphone;
 		this.email = email;
+		this.customer = customer;
+		this.eatingTime = eatingTime;
 	}
 	
 	public int getId() {
@@ -64,6 +66,20 @@ public class model {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public int getcustomer() {
+		return customer;
+	}
+	public void setcustomer(int customer) {
+		this.customer = customer;
+	}
+	
+	public String geteatingTime() {
+		return eatingTime;
+	}
+	public void seteatingTime(String eatingTime) {
+		this.eatingTime = eatingTime;
 	}
 	
 	@Override

@@ -133,6 +133,9 @@
 		}else if ("${alert}"=="editSuccess"){
 			toastr.options.timeOut = 3000; 
 	        toastr.info('會員修改成功');			
+		}else if ("${alert}"=="ReservationSuccess"){
+			toastr.options.timeOut = 3000; 
+	        toastr.info('預約成功');			
 		}
 	}	
 	</script>	

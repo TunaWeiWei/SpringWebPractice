@@ -101,7 +101,7 @@ public class controller {
 			e.printStackTrace();
 		}
 			
-		return new ModelAndView("redirect:/memberShipCenter");		//  2023/7/20不知道為啥無法將URL改址
+		return new ModelAndView("redirect:/service");		//  2023/7/20不知道為啥無法將URL改址
 		
 		    }
 	
@@ -219,6 +219,38 @@ public class controller {
 			session.setAttribute("alert", "editSuccess");
 		
 		return new ModelAndView("redirect:/memberShipCenter");
+		    }
+	
+	@PostMapping(value = "Reservation",params = {"customer","eatingTime","account"})
+	public ModelAndView Reservation(Model model,HttpSession session,				
+			@RequestParam(value="customer") int customer,
+			@RequestParam(value="eatingTime") String eatingTime,			
+			@RequestParam(value="account") String account){	
+			
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String databaseUser = "root";
+			String databasePassword = "root";
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/item", databaseUser, databasePassword);
+			String SQL_Update = "UPDATE projectmembership SET customer=?,eatingTime=? WHERE account=?";
+		try (PreparedStatement st =  conn.prepareStatement(SQL_Update)){
+			st.setInt(1, customer);
+			st.setString(2, eatingTime);			
+			st.setString(3, account);
+			
+			st.executeUpdate();	
+			
+			conn.close();
+			st.close();				
+		}
+		
+		} catch (Exception e) {			
+			e.printStackTrace();
+		}
+		
+		session.setAttribute("alert", "ReservationSuccess");	
+		
+		return new ModelAndView("redirect:/");
 		    }
 	
 	@GetMapping("/logout")
