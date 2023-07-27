@@ -13,11 +13,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/basicCSS.css" type="text/css">
+	
 <meta charset="UTF-8">
 <title>會員資料修改</title>
 </head>
 <body >
-<div id="bc">
+	<div class="icon-bar">
+			<a href="<c:url value='/'/>">
+				<img id="home_img" src="/icon/home.png" alt="首頁">
+					<span class="" id="home"></span>
+			</a>					
+			<a href="<c:url value='login'/>">
+				<img id="login_img" src="/icon/user.png" alt="會員登入">
+					<span class="" id="member"></span>
+			</a>
+		</div>
+	<div id="bc">
 	<h1>會員資料修改</h1>	
     	<div class="inf">
     	<form method="post" action="memberUpdate">
@@ -78,5 +91,13 @@
 		</form>
 		</div>		
 	</div>
+	
+	<script>
+		if (UserNameCheck = "${username}") {
+			document.getElementById("member").innerText = "你好:"+"${username}" ;
+		}else {
+			document.getElementById("member").innerText = "登入/註冊" ;
+		}
+	</script>
 </body>
 </html>

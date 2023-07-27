@@ -101,7 +101,7 @@ public class controller {
 			e.printStackTrace();
 		}
 			
-		return new ModelAndView("redirect:/service");		//  2023/7/20不知道為啥無法將URL改址
+		return new ModelAndView("redirect:/");		//  2023/7/20不知道為啥無法將URL改址
 		
 		    }
 	
@@ -257,6 +257,6 @@ public class controller {
 	public ModelAndView logout(Model model,HttpSession session) {
 		session.invalidate();		
 		model = null;
-		return new ModelAndView("redirect:/login");
+		return new ModelAndView("redirect:/");
 	}
 }

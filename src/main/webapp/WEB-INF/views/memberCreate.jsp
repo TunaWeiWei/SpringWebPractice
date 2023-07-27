@@ -10,12 +10,24 @@
   	 <!-- toastr v2.1.4 -->
  	 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet"/>
  	 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+ 	 
+ 	 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/basicCSS.css" type="text/css">
 <meta charset="UTF-8">
 <title>會員創立</title>
 </head>
 <body onload="memberStatus()">
 	<div id="bc">
 	<h1>會員申請</h1>	
+		<div class="icon-bar">
+			<a href="<c:url value='/'/>">
+				<img id="home_img" src="/icon/home.png" alt="首頁">
+					<span class="" id="home"></span>
+			</a>					
+			<a href="<c:url value='login'/>">
+				<img id="login_img" src="/icon/user.png" alt="會員登入">
+					<span class="" id="member"></span>
+			</a>
+		</div>
     	<div class="inf">
     	<form method="post" action="memberCreate">
     		<fieldset class="box">
@@ -89,7 +101,7 @@
 <!-- 彈出會員登入成功or會員修改成功 -->  
   	<script>
 		if (UserNameCheck = "${username}") {
-			document.getElementById("member").innerText = "歡迎回來:"+"${username}" ;
+			document.getElementById("member").innerText = "你好:"+"${username}" ;
 		}else {
 			document.getElementById("member").innerText = "登入/註冊" ;
 		}

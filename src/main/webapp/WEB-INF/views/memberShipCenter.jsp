@@ -26,34 +26,21 @@
  	 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet"  />
  	 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script> 
  	 
- <style>    	
-        fieldset {
-            left: 30%;
-            width: 40%;
-            min-height: fit-content;
-            min-width: 200px;
-        }
-        
-        table {
-            border-spacing: 0px 10px;
-            width: 100%;
-        }        
+ 	 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/basicCSS.css" type="text/css">
+ 	 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/memberShipCenterCSS.css" type="text/css">
 
-        th {
-            color: blue;
-            text-align: left;
-            padding: 20px;
-        }
-
-        td {
-            color: red;
-            text-align: right;
-            font-size: larger;
-            padding: 20px;
-        }        
-    </style>
 </head>
 <body onload="memberStatus()">   <!-- 2023/7/21發現問題無法載入toastr ==>忘了添加onload="memberStatus()",此處為在載入網頁時即進行動作的功能 -->
+	<div class="icon-bar">
+			<a href="<c:url value='/'/>">
+				<img id="home_img" src="/icon/home.png" alt="首頁">
+					<span class="" id="home"></span>
+			</a>					
+			<a href="<c:url value='login'/>">
+				<img id="login_img" src="/icon/user.png" alt="會員登入">
+					<span class="" id="member"></span>
+			</a>
+	</div>
  		<form class="show">
 				<div class="ed">
 					<button id="Edit"><a class="btn" href="<c:url value='/memberEdit'/>" >會員資料修改</a></button>
@@ -126,18 +113,19 @@
  	
 	<script>
 	function memberStatus() {		
-		if ("${alert}"=="loginSuccess") {			
-			toastr.options.timeOut = 3000; 
-	        toastr.info('會員登入成功');
-					
-		}else if ("${alert}"=="editSuccess"){
+		if ("${alert}"=="editSuccess"){
 			toastr.options.timeOut = 3000; 
 	        toastr.info('會員修改成功');			
-		}else if ("${alert}"=="ReservationSuccess"){
-			toastr.options.timeOut = 3000; 
-	        toastr.info('預約成功');			
 		}
 	}	
-	</script>	
+	</script>
+	<script>
+		
+		if (UserNameCheck = "${username}") {
+			document.getElementById("member").innerText = "你好:"+"${username}" ;
+		}else {
+			document.getElementById("member").innerText = "登入/註冊" ;
+		}
+	</script>
 </body>
 </html>
