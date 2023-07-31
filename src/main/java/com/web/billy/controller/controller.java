@@ -42,6 +42,11 @@ public class controller {
 		return"memberShipCenter";
 	}
 	
+	@GetMapping("/reservationSearch")
+	public String reservationSearch() {
+		return"reservationSearch";
+	}
+	
 	@GetMapping("/cancelEdit")
 	public ModelAndView cancelEdit(HttpSession session) {
 		session.setAttribute("alert", null);
@@ -89,6 +94,8 @@ public class controller {
 				session.setAttribute("tel",rs.getInt("tel"));
 				session.setAttribute("cellphone",rs.getInt("cellphone"));
 				session.setAttribute("email",rs.getString("email"));
+				session.setAttribute("customer",rs.getInt("customer"));
+				session.setAttribute("eatingTime",rs.getString("eatingTime"));
 				
 				//此項為傳回login時用來彈出提醒視窗的判斷值
 				session.setAttribute("alert", "loginSuccess");

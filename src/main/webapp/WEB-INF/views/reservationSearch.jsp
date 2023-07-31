@@ -18,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-<title>會員頁面</title>
+<title>查詢預約頁面</title>
 
   <!-- jQuery v1.9.1 -->
    	 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -42,15 +42,12 @@
 			</a>
 	</div>
  		<form class="show">
-				<div class="ed">
-					<button id="Edit"><a class="btn" href="<c:url value='/memberEdit'/>" >會員資料修改</a></button>
+				<div class="memberShipCenter">
+					<button id="Edit"><a class="btn" href="<c:url value='/memberShipCenter'/>" >會員中心</a></button>
 				</div>
 				<div class="log">
 					<button id="buttonPress"><a class="btn" href="<c:url value='/logout'/>" >登出</a></button>
-				</div>	
-				<div class="reservationSearch">
-					<button id="buttonPress"><a class="btn" href="<c:url value='/reservationSearch'/>" >查詢預約紀錄</a></button>
-				</div>		
+				</div>			
 			</form>
 	<div id="bc">
 	<h1>會員中心</h1>	
@@ -60,8 +57,8 @@
 	        <fieldset class="box">
 	            <table>
 	                <tr>
-	                    <th>姓名:</th>
-	                    <td>${username} </td>
+	                    <th>預約日期:</th>
+	                    <td>留白中 </td>
 	                </tr>
 	            </table>
 	        </fieldset>
@@ -70,8 +67,8 @@
 		        <fieldset class="box">
 		            <table>
 		                <tr>
-		                    <th>年齡:</th>
-		                    <td>${age}</td>
+		                    <th>預約人數:</th>
+		                    <td>${customer}</td>
 		                </tr>
 		            </table>
 		        </fieldset>
@@ -81,34 +78,13 @@
 		        <fieldset class="box">
 		            <table>
 		                <tr>
-		                    <th>電話:</th>
-		                    <td>0${tel}</td>
+		                    <th>預約時段:</th>
+		                    <td>${eatingTime}</td>
 		                </tr>
 		            </table>
 		        </fieldset>
 		
-		    </form>
-		    <form>
-		        <fieldset class="box">
-		            <table>
-		                <tr>
-		                    <th>手機:</th>
-		                    <td>0${cellphone}</td>
-		                </tr>
-		            </table>
-		        </fieldset>
-		
-		    </form>
-		    <form>
-		        <fieldset  class="box1">
-		            <table>
-		                <tr>
-		                    <th>電子郵件:</th>
-		                    <td>${email}</td>
-		                </tr>
-		            </table>
-		        </fieldset>
-		    </form>
+		    </form>		    
 		</div>		
 	</div>
 	
