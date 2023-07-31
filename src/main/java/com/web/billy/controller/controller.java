@@ -254,7 +254,8 @@ public class controller {
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}
-		
+		session.setAttribute("customer",customer);
+		session.setAttribute("eatingTime",eatingTime);
 		session.setAttribute("alert", "ReservationSuccess");	
 		
 		return new ModelAndView("redirect:/");
