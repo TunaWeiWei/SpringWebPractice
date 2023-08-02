@@ -16,11 +16,12 @@
 <head>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/basicCSS.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/calender.css" type="text/css">
 
 <meta charset="UTF-8">
 <title>預約頁面</title>
 </head>
-<body>
+<body class="light">>
 	
 	<div>
 		<div class="icon-bar">
@@ -37,7 +38,39 @@
 		<div class="inf">
     	<form method="post" action="Reservation">
     		<fieldset class="box">
-    						<input type="hidden" name="account" value="${account}" required/>	            
+    						<input type="hidden" name="account" value="${account}" required/>
+    		<table>				
+    			<div class="calendar">
+                    <div class="calendar-header">
+            
+                        <div class="year-picker">
+                            <span class="year-change" id="prev-year">
+                                <pre><</pre>
+                            </span>
+                            <span class="year-change" id="year">2022</span>
+                            <span class="year-change" id="next-year">
+                                <pre>></pre>
+                            </span>
+                        </div>
+                        <br>
+                        <span class="month-picker" id="month-picker">February</span>
+                    </div>
+                    <div class="calendar-body">
+                        <div class="calendar-week-day">
+                            <div>日</div>
+                            <div>一</div>
+                            <div>二</div>
+                            <div>三</div>
+                            <div>四</div>
+                            <div>五</div>
+                            <div>六</div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>                    
+                    <div class="month-list"></div>
+                </div>
+    			</table>
+    							            
 		        <table>
 		            <tr>
 		                <th>預約人數:</th>
@@ -74,12 +107,14 @@
 		</form>
 		</div>		
 	</div>
-	</div>
+	
 	<div>
 		<a href="<c:url value='/'/>">
 		<h1>回首頁</h1>
+		</a>
 	</div>
 	
+	<script type="text/javascript" src="${pageContext.request.contextPath}/javaScript/calender.js" ></script>
 	<script>
 	if (UserNameCheck = "${username}") {
 		document.getElementById("member").innerText = "你好:"+"${username}" ;
