@@ -58,7 +58,7 @@
 	            <table>
 	                <tr>
 	                    <th>預約日期:</th>
-	                    <td>留白中 </td>
+	                    <td>${date}</td>
 	                </tr>
 	            </table>
 	        </fieldset>

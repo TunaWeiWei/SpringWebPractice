@@ -46,9 +46,9 @@
 		        <table>
 		            <tr>
 		                <th>用戶名:</th>
-                		<td><input type="text1" placeholder="請輸入2-10位英文或數字"
-                		  			   pattern=^[a-zA-Z0-9]*$ minlength="2" maxlength="10" title="請最少輸入2-10位英文或數字"
-                		  			   id="userName" name="username" value="${username}" required></td>
+                		<td><input type="text" placeholder="請輸入2-10個字"
+                		  		   minlength="2" maxlength="10" title="請最少輸入2-10個字"
+                		  		   id="userName" name="username" value="${username}" required></td>
 		            </tr>
 		        </table>		
 		    		        

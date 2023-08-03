@@ -94,6 +94,7 @@ public class controller {
 				session.setAttribute("tel",rs.getInt("tel"));
 				session.setAttribute("cellphone",rs.getInt("cellphone"));
 				session.setAttribute("email",rs.getString("email"));
+				session.setAttribute("date",rs.getString("date"));
 				session.setAttribute("customer",rs.getInt("customer"));
 				session.setAttribute("eatingTime",rs.getString("eatingTime"));
 				
@@ -228,8 +229,9 @@ public class controller {
 		return new ModelAndView("redirect:/memberShipCenter");
 		    }
 	
-	@PostMapping(value = "Reservation",params = {"customer","eatingTime","account"})
-	public ModelAndView Reservation(Model model,HttpSession session,				
+	@PostMapping(value = "Reservation",params = {"date","customer","eatingTime","account"})
+	public ModelAndView Reservation(Model model,HttpSession session,
+			@RequestParam(value="date") String date,
 			@RequestParam(value="customer") int customer,
 			@RequestParam(value="eatingTime") String eatingTime,			
 			@RequestParam(value="account") String account){	
@@ -239,11 +241,12 @@ public class controller {
 			String databaseUser = "root";
 			String databasePassword = "root";
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/item", databaseUser, databasePassword);
-			String SQL_Update = "UPDATE projectmembership SET customer=?,eatingTime=? WHERE account=?";
+			String SQL_Update = "UPDATE projectmembership SET date=?, customer=?,eatingTime=? WHERE account=?";
 		try (PreparedStatement st =  conn.prepareStatement(SQL_Update)){
-			st.setInt(1, customer);
-			st.setString(2, eatingTime);			
-			st.setString(3, account);
+			st.setString(1, date);
+			st.setInt(2, customer);
+			st.setString(3, eatingTime);			
+			st.setString(4, account);
 			
 			st.executeUpdate();	
 			
@@ -254,6 +257,7 @@ public class controller {
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}
+		session.setAttribute("date",date);
 		session.setAttribute("customer",customer);
 		session.setAttribute("eatingTime",eatingTime);
 		session.setAttribute("alert", "ReservationSuccess");	

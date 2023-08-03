@@ -3,12 +3,15 @@ package com.web.billy.model;
 public class model {
 	private int id, age, tel, cellphone, customer ;
 	private String account, username,email,password, eatingTime;
+	private String date;
 	
-	public model(int id, String account, String username, String password, int age, int tel, int cellphone, String email, int customer, String eatingTime) {
+	
+	public model(int id, String account, String username, String password, int age, int tel, int cellphone, String email, String date, int customer, String eatingTime) {
 		this.id = id; this.account = account;
 		this.username = username; this.password = password;
 		this.age = age; this.tel = tel; this.cellphone = cellphone;
 		this.email = email;
+		this.date = date;
 		this.customer = customer;
 		this.eatingTime = eatingTime;
 	}
@@ -85,5 +88,13 @@ public class model {
 	@Override
 	public String toString() {
 		return account + ":" + username;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 }

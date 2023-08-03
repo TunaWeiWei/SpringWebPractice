@@ -72,8 +72,8 @@
                     <div class="month-list"></div>
                 </div>
     			</table>
-    							            
-		        <table>
+    			
+    			<table>
 		            <tr>
 		                <th>預約人數:</th>
                 		<td><input type="radio"                 		  			   
@@ -84,6 +84,14 @@
                 		  			   id="customer" name="customer" value="3" >3人
                 		  	<input type="radio"                 		  			   
                 		  			   id="customer" name="customer" value="4" >4人</td>
+		            </tr>
+		        </table>
+		        				            
+		        <table>
+		            <tr>
+		                <th>預約日期:</th>
+                		<td><input type="date"                 		  			   
+                		  			   id="date" name="date" required>日期</td>
 		            </tr>
 		        </table>
 		        <table>

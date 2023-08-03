@@ -41,8 +41,8 @@
 		        <table>
 		            <tr>
 		                <th>用戶名:</th>
-                		<td><input type="text1" placeholder="請輸入2-10位英文或數字"
-                		  			   pattern=^[a-zA-Z0-9]*$ minlength="2" maxlength="10" title="請最少輸入2-10位英文或數字"
+                		<td><input type="text" placeholder="請輸入2-10個字"
+                		  			   minlength="2" maxlength="10" title="請最少輸入2-10個字"
                 		  			   id="userName" name="username" value="${username}" required></td>
 		            </tr>
 		        </table>		    		        
@@ -63,7 +63,7 @@
 		        <table>
 		            <tr>
 		                <th>電話:</th>
-                		<td><input type="text1" placeholder="請輸入含區號之電話號碼"
+                		<td><input type="text" placeholder="請輸入含區號之電話號碼"
                 	       			   pattern="^0([0-9]*$)" minlength="9" maxlength="10" title="請輸入含區號之電話號碼(例如04xxxxoooo)"
                 	      			   id="tel" name="tel" value="0${tel}" required></td>
 		            </tr>
@@ -71,7 +71,7 @@
 		        <table>
 		            <tr>
 		                <th>手機:</th>
-                		<td><input type="text1" placeholder="請輸入手機號碼" 
+                		<td><input type="text" placeholder="請輸入手機號碼" 
                 		  			   pattern="^09([0-9]*$)" minlength="10" maxlength="10" title="請輸入手機號碼(例如09xxxxoooo)"
                 		  			   id="cellphone" name="cellphone" value="0${cellphone}" required></td>
 		            </tr>
