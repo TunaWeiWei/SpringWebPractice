@@ -28,7 +28,7 @@
  	 
  	 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/basicCSS.css" type="text/css">
  	 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/memberShipCenterCSS.css" type="text/css">
-
+	 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reservationSearchCSS.css" type="text/css">
 </head>
 <body onload="memberStatus()">   <!-- 2023/7/21發現問題無法載入toastr ==>忘了添加onload="memberStatus()",此處為在載入網頁時即進行動作的功能 -->
 	<div class="icon-bar">
@@ -41,16 +41,19 @@
 					<span class="" id="member"></span>
 			</a>
 	</div>
- 		<form class="show">
+	<div class="member-functions-bar">
+ 		<form class="">
 				<div class="memberShipCenter">
-					<button id="Edit"><a class="btn" href="<c:url value='/memberShipCenter'/>" >會員中心</a></button>
+					<span id="Edit"><a class="btn" href="<c:url value='/memberShipCenter'/>" >會員中心</a></span>
 				</div>
 				<div class="log">
-					<button id="buttonPress"><a class="btn" href="<c:url value='/logout'/>" >登出</a></button>
+					<span id="buttonPress"><a class="btn" href="<c:url value='/logout'/>" >登出</a></span>
 				</div>			
 			</form>
+	</div>		
 	<div id="bc">
-	<h1>會員中心</h1>	
+	<div id="title"><h1>會員中心</h1></div>
+		
     	<div class="inf">
     		
     		<form>

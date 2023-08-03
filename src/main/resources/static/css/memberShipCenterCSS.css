@@ -1,8 +1,30 @@
+.member-functions-bar{
+	overflow: auto;
+	
+}
+
+.member-functions-bar a{
+	float: left; 
+ 	text-align: center;
+ 	width: 33%; 
+ 	color: black; 
+ 	font-size: 24px;  
+}
+
 fieldset {
      left: 30%;
      width: 40%;
      min-height: fit-content;
      min-width: 200px;
+     position: relative;      
+}
+
+#title{
+	display:flex;
+	font-size: 26px;
+	align-items: center;
+    justify-content: center;
+    
 }
         
 table {
@@ -13,12 +35,14 @@ table {
 th {
       color: blue;
       text-align: left;
+      font-weight:bolder;      
       padding: 20px;
 }
 
 td {
-      color: red;
+      color: black;
       text-align: right;
       font-size: larger;
+      font-weight:bolder;
       padding: 20px;
 }        

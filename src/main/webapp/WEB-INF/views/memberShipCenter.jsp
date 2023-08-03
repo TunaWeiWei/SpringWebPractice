@@ -41,19 +41,19 @@
 					<span class="" id="member"></span>
 			</a>
 	</div>
- 		<form class="show">
+ 		<div class="member-functions-bar">
 				<div class="ed">
-					<button id="Edit"><a class="btn" href="<c:url value='/memberEdit'/>" >會員資料修改</a></button>
+					<span id="Edit"><a class="btn" href="<c:url value='/memberEdit'/>" >會員資料修改</a></span>
+				</div>					
+				<div class="reservationSearch">
+					<span id="buttonPress"><a class="btn" href="<c:url value='/reservationSearch'/>" >查詢預約紀錄</a></span>
 				</div>
 				<div class="log">
-					<button id="buttonPress"><a class="btn" href="<c:url value='/logout'/>" >登出</a></button>
-				</div>	
-				<div class="reservationSearch">
-					<button id="buttonPress"><a class="btn" href="<c:url value='/reservationSearch'/>" >查詢預約紀錄</a></button>
+					<span id="buttonPress"><a class="btn" href="<c:url value='/logout'/>" >登出</a></span>
 				</div>		
-			</form>
+		</div>
 	<div id="bc">
-	<h1>會員中心</h1>	
+	<div id="title"><h1>會員中心</h1></div>
     	<div class="inf">
     		
     		<form>

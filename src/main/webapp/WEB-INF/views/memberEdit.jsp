@@ -15,13 +15,15 @@
 <head>
 
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/basicCSS.css" type="text/css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/memberShipCenterCSS.css" type="text/css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/memberCRUD_CSS.css" type="text/css">
 	
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>會員資料修改</title>
 </head>
-<body >
+<body>
 	<div class="icon-bar">
 			<a href="<c:url value='/'/>">
 				<img id="home_img" src="/icon/home.png" alt="首頁">
@@ -33,7 +35,7 @@
 			</a>
 		</div>
 	<div id="bc">
-	<h1>會員資料修改</h1>	
+	<div id="title"><h1>會員資料修改</h1></div>	
     	<div class="inf">
     	<form method="post" action="memberUpdate">
     		<fieldset class="box">
@@ -82,13 +84,15 @@
                 		<td><input type="email" placeholder="請輸入電子郵件" id="email" name="email" value="${email}" required></td>
 		            </tr>
 		        </table>
-		        <div class="memberEditSubmit">
-		        <button type="submit" id="buttonPress" ><a class="btn">確認修改</a></button>
-		        </div>
-		        <div class="memberEditCancel">
-		        <button id="buttonPress"><a class="btn" href="<c:url value='/cancelEdit'/>">取消修改</a></button>       			
-       			</div>
-       				   
+		        
+		        <div class="member-submit-bar">		        
+		        	<div class="memberEditSubmit">
+		        		<button type="submit" id="buttonPress" ><a class="btn">確認修改</a></button>
+		       		</div>
+		        	<div class="memberEditCancel">
+		        		<button id="buttonPress"><a class="btn" href="<c:url value='/cancelEdit'/>">取消修改</a></button>       			
+       				</div>
+       			</div>	   
 		    </fieldset>
 		</form>
 		</div>		

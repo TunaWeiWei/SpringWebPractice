@@ -22,6 +22,8 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
    
    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/basicCSS.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/memberShipCenterCSS.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/memberCRUD_CSS.css" type="text/css">
    
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,12 +52,14 @@
             	<label style="font-size: 20px; color: orange;">會員密碼:</label>
             	<input type="password" placeholder="輸入密碼" id="passWord" name="passWord"><br />
             </div>
-            <div class="mem1">
-            	<input type="submit" value="登入" class="button"><br />
-            </div>
-            <div class="mem1">
-            	<button id="create"><a href="" style="text-decoration: none; color: blue" target="_blank">忘記密碼?</a></button>
-            <button id="create"><a href="<c:url value='/memberCreate'/>"  style="text-decoration: none; color: blue">註冊新會員</a></button>
+            
+            <div class="member-submit-bar">
+            	<div class="mem1">
+            		<input type="submit" value="登入" class="button"><br />
+            	</div>
+            	<div class="mem1">            	
+            		<button id="create"><a href="<c:url value='/memberCreate'/>"  style="text-decoration: none; color: blue">註冊新會員</a></button>
+            	</div>
             </div>
         </fieldset>
     </form>

@@ -5,21 +5,26 @@
 <!DOCTYPE html>
 <html>
 <head>
- 	 <!-- jQuery v1.9.1 -->
+	 <meta charset="UTF-8">
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 	 
+<title>會員創立</title>
+
+<!-- jQuery v1.9.1 -->
   	 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
   	 <!-- toastr v2.1.4 -->
  	 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet"/>
  	 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
  	 
  	 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/basicCSS.css" type="text/css">
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>會員創立</title>
+ 	 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/memberShipCenterCSS.css" type="text/css">
+ 	 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/memberCRUD_CSS.css" type="text/css">
+ 	 
 </head>
 <body onload="memberStatus()">
 	<div id="bc">
-	<h1>會員申請</h1>	
+	<div id="title"><h1>會員申請</h1></div>	
 		<div class="icon-bar">
 			<a href="<c:url value='/'/>">
 				<img id="home_img" src="/icon/home.png" alt="首頁">
@@ -88,13 +93,15 @@
                 		<td><input type="email" placeholder="請輸入電子郵件" id="email" name="email" value="${email}" required></td>
 		            </tr>
 		        </table>
-		        <div class="memberCreateSubmit">
-		        <button type="submit" id="buttonPress" value="add"><a>申請</a></button>
-		        </div>
-		        <div class="memberCreateCancel">
-		        <button id="buttonPress"><a class="btn" href="<c:url value='/logout'/>">取消申請</a></button>       			
-       			</div>
-       				   
+		        
+		        <div class="member-submit-bar">
+		       	 <div class="memberCreateSubmit">
+		        	<button type="submit" id="buttonPress" value="add"><a>申請</a></button>
+		       	 </div>
+		       	 <div class="memberCreateCancel">
+		       		<button id="buttonPress"><a class="btn" href="<c:url value='/logout'/>">取消申請</a></button>       			
+       			 </div>
+       			</div>	   
 		    </fieldset>
 		</form>
 		</div>		
