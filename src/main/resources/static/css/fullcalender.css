@@ -1,0 +1,28 @@
+.calender_container{	
+	max-height: fit-content;
+    max-width: 90%;
+    position: relative;
+    padding: 5%; 	
+}
+
+#calendar{
+	padding: 3%;
+	background-color: grey;    
+}
+
+.fc th {
+color: white;
+font-size: 25px;
+}
+
+.member-functions-bar{
+	overflow: auto;	
+}
+
+.member-functions-bar a{
+	float: left; 
+ 	text-align: center;
+ 	width: 50%; 
+ 	color: black; 
+ 	font-size: 24px;  
+}

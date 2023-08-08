@@ -100,7 +100,7 @@
 		
 		    </form>
 		    <form>
-		        <fieldset  class="box1">
+		        <fieldset  class="box">
 		            <table>
 		                <tr>
 		                    <th>電子郵件:</th>

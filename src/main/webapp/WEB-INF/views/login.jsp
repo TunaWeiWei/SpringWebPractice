@@ -43,23 +43,24 @@
 	</div>
 	<h1 style="text-align: center; margin-top: 50px">登入您的帳號</h1>
     <form method='POST' action="loginCheck" >
-        <fieldset>
+        <fieldset class=member>
             <div class="mem">
-            	<label style="font-size: 20px; color: orange;">會員帳號:</label>
-            	<input type="text1" placeholder="輸入帳號" id="account" name="account"><br />
+            	<label>會員帳號:</label>
+            	<input type="text" placeholder="輸入帳號" id="account" name="account"><br />
             </div>
             <div class="mem">
-            	<label style="font-size: 20px; color: orange;">會員密碼:</label>
+            	<label>會員密碼:</label>
             	<input type="password" placeholder="輸入密碼" id="passWord" name="passWord"><br />
             </div>
             
             <div class="member-submit-bar">
+            	<div class="mem1">            	
+            		<button id="create"><a href="<c:url value='/memberCreate'/>"  style="text-decoration: none;">註冊新會員</a></button>
+            	</div>
             	<div class="mem1">
             		<input type="submit" value="登入" class="button"><br />
             	</div>
-            	<div class="mem1">            	
-            		<button id="create"><a href="<c:url value='/memberCreate'/>"  style="text-decoration: none; color: blue">註冊新會員</a></button>
-            	</div>
+            	
             </div>
         </fieldset>
     </form>

@@ -11,6 +11,16 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/fullcalender.css" type="text/css">
+
+<!-- full calender連結 -->
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.js'></script>
+<!-- full calender語言轉換 -->
+<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/locales-all.global.min.js'></script>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/javaScript/FullCalender.js" ></script>
+    
 <title>餐廳介紹</title>
 </head>
 <body>
@@ -25,7 +35,10 @@
 			</a>
 	</div>
 	<div>
-		<img id="introduction_img" src="/images/owlHello.png" alt="介紹圖">
+		<div class="calender_container">
+			<div id='calendar'></div>
+		</div>
+		<div class="member-functions-bar">		
 			<div>
 				<a href="<c:url value='service'/>">
 				<h1>立即登入去預約</h1>
@@ -34,6 +47,7 @@
 				<a href="<c:url value='/'/>">
 				<h1>回首頁</h1>
 			</div>
+		</div>
 	</div>
 
 

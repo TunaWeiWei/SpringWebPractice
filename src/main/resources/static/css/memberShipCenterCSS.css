@@ -16,7 +16,8 @@ fieldset {
      width: 40%;
      min-height: fit-content;
      min-width: 200px;
-     position: relative;      
+     position: relative;
+     background-color: #c0c0c0;      
 }
 
 #title{
